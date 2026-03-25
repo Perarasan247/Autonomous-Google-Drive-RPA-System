@@ -1,7 +1,3 @@
-# DriveBot — Autonomous Google Drive RPA System
-
-> *Powered by Google ADK · MCP · Playwright · Gemini 2.0*
-
 An enterprise-grade, multi-agent Robotic Process Automation (RPA) system that automates end-to-end Google Drive workflows — from browser launch and authentication to file navigation, download, and local file management — entirely without human interaction.
 
 ---
@@ -9,6 +5,7 @@ An enterprise-grade, multi-agent Robotic Process Automation (RPA) system that au
 ## Table of Contents
 
 - [Overview](#overview)
+- [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
 - [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
@@ -35,6 +32,26 @@ This system uses **Google's Agent Development Kit (ADK)** to orchestrate a pipel
 5. **Move** the downloaded file to a configured local destination
 
 The agents communicate through a local **MCP (Model Context Protocol) server** — a FastAPI application exposing browser, auth, drive, and filesystem operations as HTTP tool endpoints.
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| **AI / Agent Framework** | [Google ADK](https://google.github.io/adk-docs/) `>=0.1.0` | Multi-agent orchestration, `LlmAgent`, `SequentialAgent`, `FunctionTool`, `AgentTool` |
+| **LLM** | [Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/) via `google-generativeai >=0.7.0` | Inference engine for all agents |
+| **Tool Protocol** | [MCP (Model Context Protocol)](https://modelcontextprotocol.io/) `>=1.1.0` | Standardised tool exposure and discovery |
+| **MCP Server** | [FastAPI](https://fastapi.tiangolo.com/) `>=0.111.0` + [Uvicorn](https://www.uvicorn.org/) `>=0.30.0` | HTTP server hosting all RPA tool endpoints |
+| **Browser Automation** | [Playwright](https://playwright.dev/python/) `>=1.44.0` + [playwright-stealth](https://pypi.org/project/playwright-stealth/) `>=1.0.6` | Headful Chromium control with anti-bot evasion |
+| **HTTP Client** | [HTTPX](https://www.python-httpx.org/) `>=0.27.0` | Async HTTP calls from agents to MCP server |
+| **File Watching** | [Watchdog](https://python-watchdog.readthedocs.io/) `>=4.0.0` | Real-time monitoring of download directory |
+| **Configuration** | [Pydantic Settings](https://docs.pydantic.dev/latest/concepts/pydantic_settings/) `>=2.3.0` + [python-dotenv](https://pypi.org/project/python-dotenv/) `>=1.0.1` | Type-safe settings loaded from `.env` |
+| **Data Validation** | [Pydantic](https://docs.pydantic.dev/) `>=2.7.0` | Request/response models for all tool endpoints |
+| **Logging** | [Loguru](https://loguru.readthedocs.io/) `>=0.7.2` + [Rich](https://rich.readthedocs.io/) `>=13.7.0` | Structured, coloured console and file logging |
+| **Async Runtime** | [asyncio](https://docs.python.org/3/library/asyncio.html) + [AnyIO](https://anyio.readthedocs.io/) `>=4.4.0` | Async/await concurrency throughout the stack |
+| **Testing** | [pytest](https://docs.pytest.org/) `>=8.2.0` + [pytest-asyncio](https://pytest-asyncio.readthedocs.io/) `>=0.23.7` | Smoke tests for imports, server, and tools |
+| **Language** | Python 3.11+ | Core runtime |
 
 ---
 
