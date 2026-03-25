@@ -1,0 +1,8 @@
+{
+  "scenarios": [
+    {
+      "starting_prompt": "I need to download the NVIDIA Fundamentals of Deep Learning certificate from my Coursera folder in Google Drive and move it to D:\\test.",
+      "conversation_plan": "The user wants to automate a Google Drive download and file move. The agent should start the MCP server, launch the browser, log in, navigate to the 'Coursera Certificates' folder, download the 'NVIDIA Fundamentals of Deep Learning' file, and finally move it to the destination directory. If the agent asks for confirmation or reports progress, the user should encourage it to continue."
+    }
+  ]
+}

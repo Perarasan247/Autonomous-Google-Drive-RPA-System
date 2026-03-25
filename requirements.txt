@@ -1,0 +1,34 @@
+# ── Google ADK & AI ──────────────────────────────────────────────────────────
+google-adk>=0.1.0
+google-generativeai>=0.7.0
+
+# ── MCP Server ───────────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+mcp>=1.1.0
+httpx>=0.27.0
+
+# ── Browser Automation ───────────────────────────────────────────────────────
+playwright>=1.44.0
+playwright-stealth>=1.0.6
+
+# ── File System & Watching ───────────────────────────────────────────────────
+watchdog>=4.0.0
+pathlib2>=2.3.7
+
+# ── Configuration & Utilities ────────────────────────────────────────────────
+python-dotenv>=1.0.1
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+
+# ── Async & Concurrency ──────────────────────────────────────────────────────
+asyncio-throttle>=1.0.2
+anyio>=4.4.0
+
+# ── Logging & Monitoring ─────────────────────────────────────────────────────
+rich>=13.7.0
+loguru>=0.7.2
+
+# ── Testing ──────────────────────────────────────────────────────────────────
+pytest>=8.2.0
+pytest-asyncio>=0.23.7

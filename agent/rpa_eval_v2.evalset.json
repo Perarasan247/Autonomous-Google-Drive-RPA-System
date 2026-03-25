@@ -1,0 +1,19 @@
+{
+  "eval_set_id": "rpa_eval_v2",
+  "name": "rpa_eval_v2",
+  "eval_cases": [
+    {
+      "eval_id": "ed54ec13",
+      "conversation_scenario": {
+        "starting_prompt": "I need to download the NVIDIA Fundamentals of Deep Learning certificate from my Coursera folder in Google Drive and move it to D:\\test.",
+        "conversation_plan": "The user wants to automate a Google Drive download and file move. The agent should start the MCP server, launch the browser, log in, navigate to the 'Coursera Certificates' folder, download the 'NVIDIA Fundamentals of Deep Learning' file, and finally move it to the destination directory. If the agent asks for confirmation or reports progress, the user should encourage it to continue."
+      },
+      "session_input": {
+        "app_name": "agents",
+        "user_id": "eval_user"
+      },
+      "creation_timestamp": 1772769366.317181
+    }
+  ],
+  "creation_timestamp": 1772769361.9329984
+}
